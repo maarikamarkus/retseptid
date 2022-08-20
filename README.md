@@ -1,0 +1,1 @@
+# Simple static website for collected recipes
