@@ -1,0 +1,14 @@
+---
+title: Retseptid
+---
+
+extends /base.pug
+
+block content
+  h1 Retseptid
+
+  h2 NB! Retseptid on siit-sealt aastate jooksul kokku kogutud ning peamiselt teiste välja mõeldud.
+
+  each recipe in collections.recipe
+    div
+      a(href=recipe.url) #{recipe.data.title}
