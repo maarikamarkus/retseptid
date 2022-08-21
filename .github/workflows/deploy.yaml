@@ -11,9 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - env:
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        run: mkdir ~/.ssh && echo $PRIVATE_KEY > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && chmod 700 ~/.ssh 
+      - run: mkdir ~/.ssh && echo ${{secrets.PRIVATE_KEY}} > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && chmod 700 ~/.ssh 
       - run: npm i
       - run: npm run build
       - run: tar cf site.tar.gz -C _site/ .
