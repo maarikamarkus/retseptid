@@ -1,2 +1,9 @@
-each ingredient in ingredients 
-    p #{ingredient[0]} #{ingredient[1]}
+.border.rounded-lg.shadow-sm.overflow-hidden
+  .p-2.border-b.mb-2.bg-slate-50
+    h2 Koostisosad
+  .p-2.mb-2
+    table.font-light
+      each ingredient in ingredients 
+        tr 
+          td.px-2 #{ingredient[0]} 
+          td.px-2 #{ingredient[1]}

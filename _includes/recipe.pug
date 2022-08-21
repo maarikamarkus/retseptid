@@ -3,9 +3,17 @@ doctype html
 html(lang="en")
   include /head.pug
 
-  body 
-    block content
+  body
+    .flex.justify-center  
+      div(class="md:w-4/6 w-full") 
+        h1
+          | #{title}
 
-    div
-      a(href='/') Tagasi retseptide nimekirja 
-        
+        div(class="grid md:grid-cols-2 gap-5")
+          include /ingredients.pug
+          div
+            block content
+
+        div
+          a(href='/') Tagasi retseptide nimekirja 
+          

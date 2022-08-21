@@ -1,3 +1,23 @@
-body {
-  color: cornflowerblue;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-[#1687A7] uppercase font-medium text-3xl my-5;
+}
+
+h2 {
+  @apply font-normal;
+}
+
+p {
+  @apply font-light
+}
+
+@layer base {
+  body,
+  html {
+    font-family: 'Poppins', sans-serif;
+    line-height: 175%;
+  }
 }
