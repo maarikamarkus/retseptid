@@ -11,7 +11,21 @@ h2 {
 }
 
 p {
-  @apply font-light
+  @apply font-light;
+}
+
+.btn {
+  @apply bg-slate-100 p-2 rounded-lg border hover:bg-slate-200 inline-block;
+}
+
+.recipe-link {
+  @apply basis-1/2 block bg-slate-100 border hover:bg-slate-300 rounded-lg overflow-hidden relative hover:opacity-75 transition-opacity;
+}
+
+.recipe-name {
+  @apply absolute bottom-0 p-5 text-white uppercase w-full;
+  background-image: linear-gradient(rgba(71, 85, 105, 0), rgba(71, 85, 105, 0.2), rgba(71, 85, 105, 0.6));
+  text-shadow: 2px 2px 8px #000;
 }
 
 @layer base {
