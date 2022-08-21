@@ -3,6 +3,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setPugOptions({
       globals: ['filters']
   });
+
+  eleventyConfig.addWatchTarget('./tailwind.config.js')
+  eleventyConfig.addWatchTarget('./css/style.css')
+
   eleventyConfig.addPassthroughCopy('css')
   return {
     passthroughFileCopy: true
