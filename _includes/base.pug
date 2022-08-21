@@ -1,7 +1,9 @@
 doctype html
 
 html(lang="en")
-    include /head.pug
+  include /head.pug
     
-    body 
+  body
+    .flex.justify-center
+      div(class="md:w-4/6 w-full")
         block content

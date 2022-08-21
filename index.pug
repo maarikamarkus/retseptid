@@ -5,10 +5,15 @@ title: Retseptid
 extends /base.pug
 
 block content
-  h1 Retseptid
+  .mt-10.mx-10
+    h1.flex.justify-center Retseptid
 
-  h2 NB! Retseptid on siit-sealt aastate jooksul kokku kogutud ning peamiselt teiste välja mõeldud.
+    h2.flex.justify-center NB! Retseptid on siit-sealt aastate jooksul kokku kogutud ning peamiselt teiste välja mõeldud.
 
-  each recipe in collections.recipe
-    div
-      a(href=recipe.url) #{recipe.data.title}
+    div(class="grid gap-4 grid-cols-1 md:grid-cols-2")
+      each recipe in collections.recipe
+        a.recipe-link(href=recipe.url)
+          img(src=recipe.data.pic) 
+          .recipe-name
+            | #{recipe.data.name}
+
