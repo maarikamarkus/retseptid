@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tailwind:process": "npx postcss css/style.css --o _site/css/style.css --watch",
-    "build": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy && npx postcss css/style.css --o _site/css/style.css",
     "serve": "npx @11ty/eleventy --serve",
     "start": "concurrently \"npm run tailwind:process\" \"npm run serve\""
   },

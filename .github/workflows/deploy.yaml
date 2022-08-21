@@ -11,10 +11,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - run: mkdir ~/.ssh && echo "${{secrets.PRIVATE_KEY}}" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && chmod 700 ~/.ssh 
-      - run: npm i
-      - run: npm run build
-      - run: tar cf site.tar.gz -C _site/ .
-      - run: ssh -o "StrictHostKeyChecking=accept-new" maarika@maarika.space 'rm -rf /var/www/retseptid/*'
-      - run: scp site.tar.gz maarika@maarika.space:/var/www/retseptid
-      - run: ssh maarika@maarika.space 'cd /var/www/retseptid && tar xf site.tar.gz && rm site.tar.gz'
+      - run: |
+          mkdir ~/.ssh 
+          echo "${{secrets.PRIVATE_KEY}}" > ~/.ssh/id_rsa 
+          chmod 600 ~/.ssh/id_rsa 
+          chmod 700 ~/.ssh 
+          npm i
+          NODE_ENV=production npm run build
+          tar cf site.tar.gz -C _site/ .
+          ssh -o "StrictHostKeyChecking=accept-new" maarika@maarika.space 'rm -rf /var/www/retseptid/*'
+          scp site.tar.gz maarika@maarika.space:/var/www/retseptid
+          ssh maarika@maarika.space 'cd /var/www/retseptid && tar xf site.tar.gz && rm site.tar.gz'
