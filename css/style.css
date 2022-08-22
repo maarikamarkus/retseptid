@@ -28,6 +28,10 @@ p {
   text-shadow: 2px 2px 8px #000;
 }
 
+.icon {
+  @apply w-4 h-4 inline mr-2 mb-1;
+}
+
 @layer base {
   body,
   html {
