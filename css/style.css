@@ -11,7 +11,7 @@ h2 {
 }
 
 p {
-  @apply font-light;
+  @apply font-light mb-3;
 }
 
 .btn {
